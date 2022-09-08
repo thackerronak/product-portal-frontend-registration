@@ -25,9 +25,9 @@ export class ApplicationApi extends HttpClient {
     )
   }
 
-  public submitRegistration = () => {
+  public submitRegistration = (applicationId:string) => {
     return this.instance.post<string>(
-      `/api/registration/submitRegistration`,
+      `/api/registration/application/${applicationId}/submitRegistration`,
       {},
       RequestService.getHeaders()
     )
